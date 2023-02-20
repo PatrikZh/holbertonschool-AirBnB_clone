@@ -18,8 +18,10 @@ class BaseModel:
                 datetime.now().isoformat(), '%Y-%m-%dT%H:%M:%S.%f'))
         else:
             self.id = str(uuid.uuid4())
-            self.created_at = datetime.now().isoformat()
-            self.updated_at = datetime.now().isoformat()
+            self.created_at = datetime.strptime(
+                datetime.now().isoformat(), '%Y-%m-%dT%H:%M:%S.%f')
+            self.updated_at = datetime.strptime(
+                datetime.now().isoformat(), '%Y-%m-%dT%H:%M:%S.%f')
 
     def __str__(self):
         ''' Printing string repr of instance'''
