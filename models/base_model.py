@@ -25,7 +25,7 @@ class BaseModel:
 
     def save(self):
         ''' update time'''
-        self.updated_at = str(datetime.now().isoformat())
+        self.updated_at = datetime.now()
 
     def to_dict(self):
         ''' dict repr of instance'''
