@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''Engine Module'''
 import json
+import os
 
 class FileStorage:
     '''Class used to manipulate json obj'''
@@ -26,7 +27,7 @@ class FileStorage:
             f.write(json.dumps(self.all()))
 
     def reload(self):
-        if FileStorage.__file_path:
+        if os.path.exists(FileStorage.__file_path):
             with open(FileStorage.__file_path, 'r') as f:
                 content = f.read()
                 if len(content) != 0:
