@@ -31,6 +31,5 @@ class FileStorage:
                 content = f.read()
                 if len(content) != 0:
                     obj = json.loads(content)
-                    print(obj)
                     for key, value in obj.items():
                         FileStorage.new(self, value)
