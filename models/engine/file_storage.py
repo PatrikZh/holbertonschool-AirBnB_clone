@@ -2,6 +2,7 @@
 '''Engine Module'''
 import json
 import os
+from models.base_model import BaseModel
 
 class FileStorage:
     '''Class used to manipulate json obj'''
@@ -12,12 +13,8 @@ class FileStorage:
         return FileStorage.__objects
 
     def new(self, obj):
-        if type(obj) is dict:
-            key = f"BaseModel.{obj['id']}"
-            FileStorage.__objects[key] = obj
-        else:
-            key = f"{obj.__class__.__name__}.{obj.id}"
-            FileStorage.__objects[key] = obj.to_dict()
+        key = f"{obj.__class__.__name__}.{obj.id}"
+        FileStorage.__objects[key] = obj.to_dict()
 
     def save(self):
         with open(FileStorage.__file_path, 'w') as f:
@@ -33,4 +30,5 @@ class FileStorage:
                 if len(content) != 0:
                     obj = json.loads(content)
                     for key, value in obj.items():
+                        value = eval(value('__class__'))(**value)
                         FileStorage.new(self, value)
