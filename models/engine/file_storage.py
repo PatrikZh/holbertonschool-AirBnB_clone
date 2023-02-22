@@ -9,13 +9,16 @@ class FileStorage:
     __file_path = "file.json"
     __objects = {}
 
+    # Returns all objects stored in FileStorage
     def all(self):
         return FileStorage.__objects
 
+    # Saves a new obj in FileStorage
     def new(self, obj):
         key = f"{obj.__class__.__name__}.{obj.id}"
         FileStorage.__objects[key] = obj
 
+    # Saves the object at Json file
     def save(self):
         with open(FileStorage.__file_path, 'w') as f:
             new_dict = {}
@@ -24,6 +27,7 @@ class FileStorage:
                 new_dict[element] = x[element].to_dict()
             f.write(json.dumps(new_dict))
 
+    # Loads from Json and creates objects
     def reload(self):
         if os.path.exists(FileStorage.__file_path):
             with open(FileStorage.__file_path, 'r') as f:

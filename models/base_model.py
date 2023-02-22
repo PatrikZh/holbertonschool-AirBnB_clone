@@ -7,6 +7,7 @@ import models
 
 class BaseModel:
     '''Base model class'''
+    # creates new BaseModel instance
     def __init__(self, *args, **kwargs):
         if not self.__dict__:
             if kwargs:
@@ -22,13 +23,16 @@ class BaseModel:
                 self.updated_at = datetime.now()
                 models.storage.new(self)
 
+    # String representation of instance
     def __str__(self):
         return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
 
+    # Updates datetime and calls storage.save method
     def save(self):
         self.updated_at = datetime.now()
         models.storage.save()
 
+    # Json serialisation dict representation
     def to_dict(self):
         new_d = {}
         new_d = self.__dict__.copy()
