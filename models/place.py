@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''Module of Place'''
 from models.base_model import BaseModel
 
 
