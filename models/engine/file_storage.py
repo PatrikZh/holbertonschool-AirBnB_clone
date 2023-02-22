@@ -30,5 +30,5 @@ class FileStorage:
                 if len(content) != 0:
                     obj = json.loads(content)
                     for key, value in obj.items():
-                        value = eval(value('__class__'))(**value)
+                        value = eval(value['__class__'])(**value)
                         FileStorage.new(self, value)
