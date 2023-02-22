@@ -18,10 +18,11 @@ class FileStorage:
 
     def save(self):
         with open(FileStorage.__file_path, 'w') as f:
-            # for key, value in FileStorage.__objects.items():
-            #     print(value)
-            #     FileStorage.__objects[key] = value
-            f.write(json.dumps(self.all()))
+            new_dict = {}
+            x = self.all()
+            for element in x:
+                new_dict[element] = x[element].to_dict()
+            f.write(json.dumps(new_dict)
 
     def reload(self):
         if os.path.exists(FileStorage.__file_path):
