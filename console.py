@@ -39,7 +39,6 @@ class HBNBCommand(cmd.Cmd):
         print(new.id)
 
     def do_show(self, arg):
-        flag = 0
         arg = arg.split()
         if len(arg) == 0:
             print("** class name missing **")
@@ -49,6 +48,7 @@ class HBNBCommand(cmd.Cmd):
             return False
         if len(arg) == 1:
             print("** instance id missing **")
+            return False
         for key, value in storage.all().items():
             if value.id == arg[1]:
                 print(value)
