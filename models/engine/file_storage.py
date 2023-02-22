@@ -22,7 +22,7 @@ class FileStorage:
             x = self.all()
             for element in x:
                 new_dict[element] = x[element].to_dict()
-            f.write(json.dumps(new_dict)
+            f.write(json.dumps(new_dict))
 
     def reload(self):
         if os.path.exists(FileStorage.__file_path):
