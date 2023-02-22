@@ -6,8 +6,8 @@ from models.base_model import BaseModel
 class Place(BaseModel):
     ''' city_id will be the same as City.id'''
     city_id = ''
-    ''' State_id will be the same as State.id'''
-    state_id = ''
+    ''' user_id will be the same as User.id'''
+    user_id = ''
     name = ''
     description = ''
     number_rooms = 0
