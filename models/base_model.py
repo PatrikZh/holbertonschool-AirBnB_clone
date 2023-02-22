@@ -8,6 +8,7 @@ import models
 class BaseModel:
     '''Base model class'''
     # creates new BaseModel instance
+
     def __init__(self, *args, **kwargs):
         if not self.__dict__:
             if kwargs:
