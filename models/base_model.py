@@ -26,7 +26,9 @@ class BaseModel:
 
     # String representation of instance
     def __str__(self):
-        return "[{}] ({}) {}".format(self.__class__.__name__, self.id, self.__dict__)
+        string = "[{}]".format(self.__class__.__name__)
+        string += " ({}) {}".format(self.id, self.__dict__)
+        return string
 
     # Updates datetime and calls storage.save method
     def save(self):
