@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+'''Module of AirBNB console'''
 import cmd
 import sys
 import os
@@ -13,6 +14,7 @@ from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
+    '''Console Function'''
     prompt = "(hbnb) "
 
     def do_quit(self, arg):
@@ -28,6 +30,7 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_create(self, arg):
+        '''Creates a new instance of said Class'''
         if len(arg) == 0:
             print('** class name missing **')
             return False
@@ -39,6 +42,7 @@ class HBNBCommand(cmd.Cmd):
         print(new.id)
 
     def do_show(self, arg):
+        '''Prints string repr of said instance'''
         arg = arg.split()
         if len(arg) == 0:
             print("** class name missing **")
@@ -57,6 +61,7 @@ class HBNBCommand(cmd.Cmd):
         print('** no instance found **')
 
     def do_destroy(self, arg):
+        '''Removes instance from memory and JsonFile'''
         arg = arg.split()
         if len(arg) == 0:
             print("** class name missing **")
@@ -75,6 +80,7 @@ class HBNBCommand(cmd.Cmd):
             print('** no instance found **')
 
     def do_all(self, arg):
+        '''Prints all str repr of instance of said Class'''
         if len(arg) != 0:
             if arg not in ls:
                 print("** class doesn't exist **")
@@ -87,6 +93,7 @@ class HBNBCommand(cmd.Cmd):
                 print(value)
 
     def do_update(self, arg):
+        '''Updates values to said instance'''
         arg = arg.split()
         flag = 0
         if len(arg) == 0:
