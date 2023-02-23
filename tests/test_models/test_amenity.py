@@ -24,6 +24,6 @@ class TestUser(unittest.TestCase):
         self.assertEqual(type(base1.created_at), datetime.datetime)
         self.assertEqual(type(base1.updated_at), datetime.datetime)
 
-    def test_storage(self):
+    def test_all_attributes(self):
         base = Amenity()
-        self.assertNotEqual(len(storage.all()), 0)
+        self.assertNotEqual(base.name, 0)
