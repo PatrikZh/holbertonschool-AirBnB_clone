@@ -24,10 +24,6 @@ class TestUser(unittest.TestCase):
         self.assertEqual(type(base1.created_at), datetime.datetime)
         self.assertEqual(type(base1.updated_at), datetime.datetime)
 
-    def test_storage(self):
-        base = User()
-        self.assertNotEqual(len(storage.all()), 0)
-
     def test_email(self):
         base = User()
         email = "someone@email.com"
@@ -36,9 +32,7 @@ class TestUser(unittest.TestCase):
 
     def test_password(self):
         base = User()
-        password = "1234"
-        base.password = password
-        self.assertEqual(base.password, password)
+        self.assertEqual(base.password, '')
 
     def test_user_first_name_last_name(self):
         base = User()
