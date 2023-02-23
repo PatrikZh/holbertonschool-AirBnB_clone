@@ -51,8 +51,9 @@ class HBNBCommand(cmd.Cmd):
             return False
         for key, value in storage.all().items():
             if value.id == arg[1]:
-                print(value)
-                return
+                if value.__class__.__name__ == arg[0]:
+                    print(value)
+                    return
         print('** no instance found **')
 
     def do_destroy(self, arg):
