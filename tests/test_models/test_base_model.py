@@ -36,7 +36,10 @@ class TestBaseModel(unittest.TestCase):
 
     def test_to_dict(self):
         base = BaseModel()
-        self.assertEqual(type(base.to_dict()), dict)
+        new_d = base.to_dict()
+        self.assertEqual(new_d['id'], base.id)
+        self.assertEqual(new_d['created_at'], base.created_at.isoformat())
+        self.assertEqual(new_d['updated_at'], base.updated_at.isoformat())
 
     def test_to_str(self):
         base = BaseModel()
