@@ -26,4 +26,4 @@ class TestUser(unittest.TestCase):
 
     def test_all_attributes(self):
         base = Amenity()
-        self.assertNotEqual(base.name, 0)
+        self.assertNotEqual(base.name, '')
