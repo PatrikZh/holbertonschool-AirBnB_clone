@@ -26,9 +26,7 @@ class TestUser(unittest.TestCase):
 
     def test_email(self):
         base = User()
-        email = "someone@email.com"
-        base.email = email
-        self.assertEqual(base.email, email)
+        self.assertEqual(base.email, '')
 
     def test_password(self):
         base = User()
@@ -36,9 +34,5 @@ class TestUser(unittest.TestCase):
 
     def test_user_first_name_last_name(self):
         base = User()
-        first_name = "Fabio"
-        last_name = "Njishi"
-        base.first_name = first_name
-        base.last_name = last_name
-        self.assertEqual(base.first_name, first_name)
-        self.assertEqual(base.last_name, last_name)
+        self.assertEqual(base.first_name, '')
+        self.assertEqual(base.last_name, '')
