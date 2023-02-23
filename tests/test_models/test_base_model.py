@@ -30,9 +30,8 @@ class TestBaseModel(unittest.TestCase):
 
     def test_save(self):
         base = BaseModel()
-        time = base.updated_at
         base.save()
-        self.assertNotEqual(base.updated_at, time)
+        self.assertEqual(base.updated_at, datetime.utcnow())
 
     def test_to_dict(self):
         base = BaseModel()
