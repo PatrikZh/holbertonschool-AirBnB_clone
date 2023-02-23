@@ -36,4 +36,4 @@ class TestUser(unittest.TestCase):
         self.assertEqual(base.price_by_night, 0)
         self.assertEqual(base.latitude, 0.0)
         self.assertEqual(base.longitude, 0.0)
-        self.assertEqual(base.amenity_ids, '')
+        self.assertEqual(base.amenity_ids, [])

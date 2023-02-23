@@ -27,3 +27,19 @@ class TestBaseModel(unittest.TestCase):
     def test_storage(self):
         base = BaseModel()
         self.assertNotEqual(len(storage.all()), 0)
+
+    def test_save(self):
+        base = BaseModel()
+        time = base.updated_at
+        base.save()
+        self.assertNotEqual(base.updated_at, time)
+
+    def test_to_dict(self):
+        base = BaseModel()
+        x = base.to_dict()
+        self.assertDictEqual(base.to_dict(), x)
+
+    def test_to_str(self):
+        base = BaseModel()
+        x = base
+        self.assertEqual(base, x)
