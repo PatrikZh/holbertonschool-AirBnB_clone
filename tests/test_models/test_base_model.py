@@ -37,7 +37,7 @@ class TestBaseModel(unittest.TestCase):
     def test_to_dict(self):
         base = BaseModel()
         x = base.to_dict()
-        self.assertDictEqual(base.to_dict(), x)
+        self.assertEqual(base.to_dict(), x)
 
     def test_to_str(self):
         base = BaseModel()
