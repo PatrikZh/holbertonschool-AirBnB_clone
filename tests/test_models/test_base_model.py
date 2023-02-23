@@ -27,7 +27,3 @@ class TestBaseModel(unittest.TestCase):
     def test_storage(self):
         base = BaseModel()
         self.assertNotEqual(len(storage.all()), 0)
-
-    def test_with_kwargs(self):
-        kwargs = {'id': 'f8ed6cb3-ff9b-43ed-b10c-5aba4b76cd58', 'created_at': '2023-02-23T14:12:35.907810',
-                  'updated_at': '2023-02-23T14:12:35.907813', '__class__': 'BaseModel'}
