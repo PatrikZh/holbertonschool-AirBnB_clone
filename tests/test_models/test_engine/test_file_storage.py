@@ -22,3 +22,6 @@ class TestFileStorage(unittest.TestCase):
         for value in obj.all().values():
             if base == obj:
                 self.assertEqual(base, value)
+
+    def test_filepath(self):
+        self.assertEqual(FileStorage.file_path(), 'file.json')
