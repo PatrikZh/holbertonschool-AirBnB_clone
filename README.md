@@ -47,3 +47,12 @@ $ ./console.py
 * ` Serialization is the process of converting an object into a stream of bytes that can be stored in a file or sent over a network. Deserialization is the process of converting the stream of bytes back into an object.`
 
 * In this project, we use JSON as the serialization format. The object is first converted to a dictionary using the to_dict method, which is then converted to a JSON string using the json.dumps method. To deserialize, we first parse the JSON string using the json.loads method, which gives us a dictionary. We then create a new object using the create method and pass the dictionary as the object's attributes. (A network). Deserialization is the process of converting the stream of bytes back into an object.
+
+# Package Imports Explained
+The project follows a modular approach to organizing the code. The project is divided into multiple packages, with each package containing modules that are responsible for a specific part of the application.
+
+To import a module from another package, we use the dot notation. For example, to import the BaseModel class from the models package, we use the following import statement:
+
+```
+from models.base_model import BaseModel
+```
