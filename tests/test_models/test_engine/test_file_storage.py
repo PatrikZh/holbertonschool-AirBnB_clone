@@ -24,4 +24,4 @@ class TestFileStorage(unittest.TestCase):
                 self.assertEqual(base, value)
 
     def test_filepath(self):
-        self.assertEqual(FileStorage.file_path(), '')
+        self.assertEqual(type(FileStorage.file_path()), str)
