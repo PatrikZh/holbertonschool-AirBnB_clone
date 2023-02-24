@@ -19,6 +19,7 @@ class TestFileStorage(unittest.TestCase):
     def test_new(self):
         obj = FileStorage()
         base = BaseModel()
+        obj.new(base)
         for value in obj.all().values():
             if base == obj:
                 self.assertEqual(base, value)
@@ -31,6 +32,12 @@ class TestFileStorage(unittest.TestCase):
         obj = FileStorage()
         self.assertEqual(type(obj._FileStorage__objects), dict)
 
-    def test_objects(self):
+    def test_all(self):
         obj = FileStorage()
         self.assertEqual(obj._FileStorage__objects, obj.all())
+
+    # def test_new(self):
+    #     obj = FileStorage()
+    #     base = BaseModel()
+    #     obj.new(base)
+    #     self.assertEqual(obj._FileStorage__objects, obj.all())
