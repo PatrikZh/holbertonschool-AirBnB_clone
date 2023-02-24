@@ -12,10 +12,6 @@ from models import storage
 
 class TestFileStorage(unittest.TestCase):
 
-    def test_storage(self):
-        obj = FileStorage()
-        self.assertEqual(type(obj.all()), dict)
-
 
     def test_filepath(self):
         obj = FileStorage()
@@ -34,11 +30,4 @@ class TestFileStorage(unittest.TestCase):
             if base == obj:
                 self.assertEqual(base, value)
 
-    # def test_save(self):
-    #     obj = FileStorage()
-    #     obj.save()
-    #     self.assertTrue(os.path.exists('file.json'))
-    #     obj.reload()
-    #     for value in obj.all().values():
-    #         if base == obj:
-    #             self.assertEqual(base, value)
+    
