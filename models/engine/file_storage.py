@@ -33,6 +33,7 @@ class FileStorage:
             for element in x:
                 new_dict[element] = x[element].to_dict()
             f.write(json.dumps(new_dict))
+        return True
 
     # Loads from Json and creates objects
     def reload(self):
@@ -44,6 +45,7 @@ class FileStorage:
                     for key, value in obj.items():
                         value = eval(value['__class__'])(**value)
                         FileStorage.new(self, value)
+        return True
 
     def file_path():
         return FileStorage.__file_path
