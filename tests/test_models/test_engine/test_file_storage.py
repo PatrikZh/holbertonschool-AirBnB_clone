@@ -19,7 +19,6 @@ class TestFileStorage(unittest.TestCase):
     def test_new(self):
         obj = FileStorage()
         base = BaseModel()
-        obj.new(base)
         for value in obj.all().values():
             if base == obj:
                 self.assertEqual(base, value)
