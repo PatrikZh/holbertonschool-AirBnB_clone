@@ -56,3 +56,10 @@ $ ./console.py
 ```
 from models.base_model import BaseModel
 ```
+# Storage
+The File Storage Layer provides an interface for storing and retrieving data from a file. The interface is defined in the FileStorage class, which provides the following methods:
+
+* ```all(self):``` returns a dictionary of all objects in the storage
+* ```new(self, obj):``` adds a new object to the storage
+* ```save(self):``` saves the objects in the storage to a file
+* ```reload(self):``` loads the objects from the file into the storage
