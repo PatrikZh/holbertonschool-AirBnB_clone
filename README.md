@@ -63,3 +63,17 @@ The File Storage Layer provides an interface for storing and retrieving data fro
 * ```new(self, obj):``` adds a new object to the storage
 * ```save(self):``` saves the objects in the storage to a file
 * ```reload(self):``` loads the objects from the file into the storage
+
+# Program Flow
+The main program flow of the application is as follows:
+
+```
+* The user starts the application by running console.py.
+* The console.py script initializes the application by creating an instance of the HBNBCommand class and calling its cmdloop() method.
+* The cmdloop() method displays a prompt and waits for user input.
+* The user enters a command, which is processed by the HBNBCommand instance.
+* The HBNBCommand instance passes the command to the appropriate layer for processing.
+* The appropriate layer processes the command and returns the appropriate output.
+* The output is displayed to the user.
+* Steps 3-7 are repeated until the user exits using the quit function.
+```
