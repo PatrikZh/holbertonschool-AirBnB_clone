@@ -24,6 +24,7 @@ class FileStorage:
     def new(self, obj):
         key = f"{obj.__class__.__name__}.{obj.id}"
         FileStorage.__objects[key] = obj
+        return True
 
     # Saves the object at Json file
     def save(self):

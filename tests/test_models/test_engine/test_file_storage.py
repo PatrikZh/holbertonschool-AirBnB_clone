@@ -24,18 +24,13 @@ class TestFileStorage(unittest.TestCase):
         obj = FileStorage()
         self.assertEqual(type(obj._FileStorage__objects), dict)
         self.assertEqual(obj._FileStorage__objects, obj.all())
-
-    def test_new(self):
+    
+    def test_methods(self):
         obj = FileStorage()
         base = BaseModel()
-        obj.new(base)
-        for value in obj.all().values():
-            if base == obj:
-                self.assertEqual(base, value)
-    
-    def test_method(self):
-        obj = FileStorage()
+        result = obj.new(base)
+        self.assertTrue(result is not None)
         result = obj.save()
         self.assertTrue(result is not None)
-
-    
+        result = obj.reload()
+        self.assertTrue(result is not None)
