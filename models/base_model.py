@@ -32,8 +32,9 @@ class BaseModel:
 
     # Updates datetime and calls storage.save method
     def save(self):
-        self.updated_at = datetime.now()
+        self.updated_at = datetime.utcnow()
         models.storage.save()
+        return self.updated_at
 
     # Json serialisation dict representation
     def to_dict(self):
