@@ -68,12 +68,12 @@ The File Storage Layer provides an interface for storing and retrieving data fro
 The main program flow of the application is as follows:
 
 ```
-* The user starts the application by running console.py.
-* The console.py script initializes the application by creating an instance of the HBNBCommand class and calling its cmdloop() method.
-* The cmdloop() method displays a prompt and waits for user input.
-* The user enters a command, which is processed by the HBNBCommand instance.
-* The HBNBCommand instance passes the command to the appropriate layer for processing.
-* The appropriate layer processes the command and returns the appropriate output.
-* The output is displayed to the user.
-* Steps 3-7 are repeated until the user exits using the quit function.
+1.  The user starts the application by running console.py.
+2. The console.py script initializes the application by creating an instance of the HBNBCommand class and calling its cmdloop() method.
+3.  The cmdloop() method displays a prompt and waits for user input.
+4.  The user enters a command, which is processed by the HBNBCommand instance.
+5.  The HBNBCommand instance passes the command to the appropriate layer for processing.
+6.  The appropriate layer processes the command and returns the appropriate output.
+7.  The output is displayed to the user.
+8.  Steps 3-7 are repeated until the user exits using the quit function.
 ```
