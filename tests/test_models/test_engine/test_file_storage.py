@@ -32,5 +32,10 @@ class TestFileStorage(unittest.TestCase):
         for value in obj.all().values():
             if base == obj:
                 self.assertEqual(base, value)
+    
+    def test_method(self):
+        obj = FileStorage()
+        result = obj.save()
+        self.assert_(result is not None)
 
     
