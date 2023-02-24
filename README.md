@@ -77,3 +77,10 @@ The main program flow of the application is as follows:
 7.  The output is displayed to the user.
 8.  Steps 3-7 are repeated until the user exits using the quit function.
 ```
+# Authors
+The project was developed by a team of developers(Fabio), with each developer responsible for a specific part of the project(Shokte Fabios). The distribution of work was as follows:
+```
+* Models Layer: Developed by Fabio
+* File Storage Layer: Developed by Ennio
+* Command Interpreter Layer: Developed by Patrik
+```
