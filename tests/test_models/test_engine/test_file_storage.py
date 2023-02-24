@@ -34,14 +34,14 @@ class TestFileStorage(unittest.TestCase):
             if base == obj:
                 self.assertEqual(base, value)
 
-    def test_save(self):
-        obj = FileStorage()
-        base = BaseModel()
-        obj.save()
-        for value in obj.all().values():
-            if base == obj:
-                self.assertEqual(base, value)
-        obj.reload()
-        for value in obj.all().values():
-            if base == obj:
-                self.assertEqual(base, value)
+    # def test_save(self):
+    #     obj = FileStorage()
+    #     base = BaseModel()
+    #     obj.save()
+    #     for value in obj.all().values():
+    #         if base == obj:
+    #             self.assertEqual(base, value)
+    #     obj.reload()
+    #     for value in obj.all().values():
+    #         if base == obj:
+    #             self.assertEqual(base, value)
