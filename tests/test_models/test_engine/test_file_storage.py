@@ -36,6 +36,6 @@ class TestFileStorage(unittest.TestCase):
     def test_method(self):
         obj = FileStorage()
         result = obj.save()
-        self.assert_(result is not None)
+        self.assertTrue(result is not None)
 
     
