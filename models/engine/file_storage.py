@@ -45,5 +45,5 @@ class FileStorage:
                         value = eval(value['__class__'])(**value)
                         FileStorage.new(self, value)
 
-    def file_path():
+    def file_path(self):
         return FileStorage.__file_path
