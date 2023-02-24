@@ -43,3 +43,7 @@ $ ./console.py
 (hbnb) all User
 [[User] (7d257547-0516-47f6-820f-95b44d05b9ea) {'id': '7d257547-0516-47f6-820f-95b44d05b9ea', 'created_at': datetime.datetime(2023, 2, 24, 10, 0, 0, 0), 'updated_at': datetime.datetime(2023, 2, 24, 10,
 ```
+# Serialization and Deserialization
+#### ` Serialization is the process of converting an object into a stream of bytes that can be stored in a file or sent over a network. Deserialization is the process of converting the stream of bytes back into an object.`
+
+#### ` In this project, we use JSON as the serialization format. The object is first converted to a dictionary using the to_dict method, which is then converted to a JSON string using the json.dumps method. To deserialize, we first parse the JSON string using the json.loads method, which gives us a dictionary. We then create a new object using the create method and pass the dictionary as the object's attributes. (A network). Deserialization is the process of converting the stream of bytes back into an object.`
